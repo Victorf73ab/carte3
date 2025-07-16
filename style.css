@@ -1,0 +1,112 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #000; /* fond sombre pour contraste */
+}
+
+#map {
+  height: 100vh;
+  width: 100%;
+}
+
+/* 🧹 Supprimer le titre (si présent) */
+h1, h2 {
+  display: none;
+}
+
+/* 🧭 Supprimer les anciens contrôles */
+#controls {
+  display: none;
+}
+
+/* 🎚️ Timeline en bas de l’écran */
+#timeline {
+  position: fixed;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: transparent;
+  padding: 10px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* 🏷️ Label de l’année au-dessus du slider */
+#year-label {
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  margin-bottom: 8px;
+}
+
+/* 🎯 Slider stylisé */
+#year {
+  width: 300px;
+  background: transparent;
+  accent-color: #0077cc;
+  cursor: pointer;
+}
+
+/* 👤 Menu déroulant en haut à gauche */
+#person-selector {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 1100;
+  background-color: rgba(255, 255, 255, 0.92);
+  padding: 12px;
+  border-radius: 8px;
+  font-family: Arial, sans-serif;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#person-selector label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+  font-size: 15px;
+  color: #333;
+}
+
+#person-select {
+  width: 200px;
+  height: 150px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #fff;
+}
+
+/* 🛑 Bouton "Tout masquer" */
+#hide-all {
+  margin-top: 10px;
+  padding: 6px 12px;
+  font-size: 14px;
+  background-color: #cc0000;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#hide-all:hover {
+  background-color: #a80000;
+}
+
+/* 🖼️ Images en cercle sur la carte */
+.leaflet-marker-icon {
+  border-radius: 50% !important;
+  object-fit: cover;
+  border: 2px solid white;
+}
+
+.leaflet-marker-icon:hover {
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
+  transform: scale(1.1);
+  transition: 0.3s ease;
+}
