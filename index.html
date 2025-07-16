@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Carte familiale avec timeline putain</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <style>
+    
+    #year-label {
+      background-color: #f0f0f0;
+      color: #333;
+      padding: 8px 12px;
+      border-radius: 6px;
+      font-weight: bold;
+      font-size: 16px;
+      display: inline-block;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+
+    /* 🧭 Menu de filtre personnes */
+    #person-selector {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1100;
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 10px;
+      border-radius: 6px;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
+    #person-selector label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    #person-select {
+      width: 200px;
+      height: 150px;
+      font-size: 14px;
+    }
+
+    #hide-all {
+      margin-top: 10px;
+      padding: 6px 12px;
+      font-size: 14px;
+      background-color: #cc0000;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    #hide-all:hover {
+      background-color: #a80000;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 🗺️ Carte -->
+  <div id="map"></div>
+
+  <!-- 🎚️ Timeline -->
+  <div id="timeline">
+    <div id="year-label">1993</div>
+    <input type="range" id="year" step="1">
+  </div>
+  
+   <!-- 👤 Filtre de personnes -->
+  <div id="person-selector">
+    <label for="person-select">Choisir une personne :</label>
+    <select id="person-select" multiple></select>
+    <button id="hide-all">Tout masquer</button>
+  </div>
+
+  <!-- 📦 Scripts -->
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OverlappingMarkerSpiderfier-Leaflet/0.2.6/oms.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
